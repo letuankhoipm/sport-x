@@ -6,7 +6,7 @@ export class ProductList extends Component {
       return <h5 className='p-2'>No Products</h5>;
     }
     return this.props.products.map((prod) => (
-      <div>
+      <div key={prod.id}>
         <div className='card m-1 p-1 bg-light' key={prod.id}>
           <h4>
             {prod.name}

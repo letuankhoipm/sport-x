@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
 import './App.css';
+import { SportsStoreDataStates } from './store/states/DataState';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
+import ShopConnector from './pages/ShopConnector';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Welcome to ReactJS
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //The data will be applied to the application using a Provider
+    <Provider store={SportsStoreDataStates}>
+      <Router>
+        <Switch>
+          <Route path='/shop' component={ShopConnector}></Route>
+          <Redirect to='/shop'></Redirect>
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 
