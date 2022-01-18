@@ -1,4 +1,8 @@
 import { createStore } from 'redux';
-import { ShopReducer } from '../reducers/ShopReducer';
+import { rootReducer } from '../reducers/index';
 
-export const SportsStoreDataStates = createStore(ShopReducer);
+export const SportsStoreDataStates = createStore(rootReducer);
+
+// export const SportsStoreDataStates = createStore(
+//   CommonReducer(ShopReducer, CartReducer)
+// );
